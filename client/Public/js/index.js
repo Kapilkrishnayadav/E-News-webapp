@@ -1,5 +1,5 @@
 const GetSports = () => {
-  fetch(" https://universal-justice-times.onrender.com/sports")
+  fetch(" http://universaljusticetimes.com/sports")
     .then((res) => res.json())
     .then((data) => {
       // console.log(data);
@@ -50,7 +50,7 @@ GetSports();
 
 
 const GetTechnology = () => {
-  fetch(" https://universal-justice-times.onrender.com/technology")
+  fetch(" http://universaljusticetimes.com/technology")
     .then((res) => res.json())
     .then((data) => {
       // console.log(data);

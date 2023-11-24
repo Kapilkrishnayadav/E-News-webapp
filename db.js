@@ -62,6 +62,9 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/index.html"));
 });
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/contact.html"));
+});
 
 app.get("/newsPage/:id", (req, res) => {
   // console.log(req.params.id);
