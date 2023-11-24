@@ -68,6 +68,9 @@ app.get("/contact", (req, res) => {
 app.get("/Award", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/Award.html"));
 });
+app.get("/index", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/index.html"));
+});
 
 app.get("/newsPage/:id", (req, res) => {
   // console.log(req.params.id);
