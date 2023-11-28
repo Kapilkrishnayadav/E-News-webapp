@@ -28,7 +28,15 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="Public/css/style.css" rel="stylesheet">
-   
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-THYG2LK4T5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-THYG2LK4T5');
+</script>
 </head>
 
 <body>
@@ -37,44 +45,74 @@
     <!-- Topbar Start -->
     <div class="container-fluid d-none d-lg-block">
         <div class="row align-items-center bg-dark px-lg-5">
+
+
+            <!-- date and day -->
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-sm bg-dark p-0">
                     <ul class="navbar-nav ml-n2">
                         <li class="nav-item border-right border-secondary">
-                            <a class="nav-link text-body small" href="#">Monday, January 1, 2045</a>
+                            <a id="dateLink" class="nav-link text-body small" href="#"></a>
                         </li>
                         <li class="nav-item border-right border-secondary">
                             <a class="nav-link text-body small" href="#">Advertise</a>
                         </li>
                         <li class="nav-item border-right border-secondary">
-                            <a class="nav-link text-body small" href="#">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-body small" href="#">Login</a>
+                            <a class="nav-link text-body small" href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </nav>
             </div>
+        
+            <script>
+                // Function to update the content of the specified element with the current date and day
+                function updateDateAndDay() {
+                    // Specify the time zone (e.g., 'America/New_York')
+                    const timeZone = 'Asia/Kolkata';
+                    
+                    // Get the current date and time in the specified time zone
+                    const currentDate = new Date().toLocaleString('en-US', { timeZone: timeZone });
+        
+                    // Extract the date and day
+                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                    const formattedDate = new Date(currentDate).toLocaleDateString('en-US', options);
+        
+                    // Update the content of the specified element with the formatted date and day
+                    const dateAndDayElement = document.getElementById('dateLink');
+                    dateAndDayElement.textContent = formattedDate;
+                }
+        
+                // Call the function when the page loads
+                updateDateAndDay();
+            </script>
+
+
+
+
+
+
+
+
             <div class="col-lg-3 text-right d-none d-md-block">
                 <nav class="navbar navbar-expand-sm bg-dark p-0">
                     <ul class="navbar-nav ml-auto mr-n2">
                         <li class="nav-item">
-                            <a class="nav-link text-body" href="#"><small class="fab fa-twitter"></small></a>
+                            <a class="nav-link text-body" href="https://twitter.com/UJ_Times"><small class="fab fa-twitter"></small></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-body" href="#"><small class="fab fa-facebook-f"></small></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-body" href="#"><small class="fab fa-linkedin-in"></small></a>
+                            <a class="nav-link text-body" href="https://www.linkedin.com/company/uj-times/"><small class="fab fa-linkedin-in"></small></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-body" href="#"><small class="fab fa-instagram"></small></a>
+                            <a class="nav-link text-body" href="https://www.instagram.com/uj_times/"><small class="fab fa-instagram"></small></a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link text-body" href="#"><small class="fab fa-google-plus-g"></small></a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
-                            <a class="nav-link text-body" href="#"><small class="fab fa-youtube"></small></a>
+                            <a class="nav-link text-body" href="https://www.youtube.com/channel/UCk0MO4p9np7iljUw9Xbw7Jg"><small class="fab fa-youtube"></small></a>
                         </li>
                     </ul>
                 </nav>
@@ -83,6 +121,7 @@
         <div class="row align-items-center bg-white py-3 px-lg-5">
             <div class="col-lg-4">
                 <a href="index.html" class="navbar-brand p-0 d-none d-lg-block">
+                    <img src="WhatsApp Image 2023-11-18 at 12.53.00_51e741aa" alt="">
                     <h1 class="m-0 display-4 text-uppercase text-primary">UJ<span class="text-secondary font-weight-normal">Times</span></h1>
                 </a>
             </div>
@@ -115,6 +154,7 @@
     <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-2 py-lg-0 px-lg-5">
             <a href="index.html" class="navbar-brand d-block d-lg-none">
+                <img src="WhatsApp Image 2023-11-18 at 12.53.00_51e741aa" alt="">
                 <h1 class="m-0 display-4 text-uppercase text-primary">UJ<span class="text-white font-weight-normal">Times</span></h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -151,13 +191,14 @@
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
+                <!-- search bar -->
+                <!-- <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
                     <input type="text" class="form-control border-0" placeholder="Keyword">
                     <div class="input-group-append">
                         <button class="input-group-text bg-primary text-dark border-0 px-3"><i
                                 class="fa fa-search"></i></button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </nav>
     </div>
