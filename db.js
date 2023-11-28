@@ -41,6 +41,7 @@ const NewsSchema = new Schema({
 });
 
 const sports = mongoose.model("sports", NewsSchema);
+const currents = mongoose.model("currents", NewsSchema);
 const technologies = mongoose.model("technologies", NewsSchema);
 
 const express = require("express");
@@ -75,6 +76,32 @@ app.get("/index", (req, res) => {
 app.get("/newsPage/:id", (req, res) => {
   // console.log(req.params.id);
   res.sendFile(path.join(__dirname, "./client/newsPage.html"));
+});
+
+app.get("/currents", async (req, res) => {
+  const data = await currents.find();
+
+  res.json(data);
+});
+app.get("/latest", async (req, res) => {
+  try {
+    // Use the Mongoose model to search for the document
+    const id=req.query.id;
+    console.log(id);
+    const doc = await mongoose.model('currents').findById(id).exec();
+    if (doc) {
+      console.log('Found document:', doc);
+      res.json(doc);
+    } else {
+      console.log('Document not found');
+    }
+  } catch (err) {
+    console.error('Error searching for document:', err);
+  }
+  //  finally {
+  //   mongoose.connection.close();
+  // }
+
 });
 
 app.get("/sports", async (req, res) => {
