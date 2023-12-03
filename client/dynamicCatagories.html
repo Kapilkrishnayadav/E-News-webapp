@@ -25,47 +25,72 @@
     <link href="../Public/css/style.css" rel="stylesheet">
 </head>
 <body>
+    <!-- WEATHER WIDGET -->
+    <div id="ww_0fc600594f2" v='1.3' loc='auto' a='{"t":"responsive","lang":"en","sl_lpl":1,"ids":["wl4684"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","sl_tof":"7"}'>More forecasts: <a href="https://wetterlabs.de/wetter_deutschland/30_tage/" id="ww_0fc600594f2_u" target="_blank">30 tage wettervorhersage</a></div><script async src="https://app2.weatherwidget.org/js/?id=ww_0fc600594f2"></script>
     <!-- Topbar Start -->
     <div class="container-fluid d-none d-lg-block">
         <div class="row align-items-center bg-dark px-lg-5">
+
+
+            <!-- date and day -->
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-sm bg-dark p-0">
                     <ul class="navbar-nav ml-n2">
                         <li class="nav-item border-right border-secondary">
-                            <a class="nav-link text-body small" href="#">Monday, January 1, 2045</a>
+                            <a id="dateLink" class="nav-link text-body small" href="#"></a>
                         </li>
                         <li class="nav-item border-right border-secondary">
                             <a class="nav-link text-body small" href="#">Advertise</a>
                         </li>
                         <li class="nav-item border-right border-secondary">
-                            <a class="nav-link text-body small" href="#">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-body small" href="#">Login</a>
+                            <a class="nav-link text-body small" href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </nav>
             </div>
+        
+            <script>
+                // Function to update the content of the specified element with the current date and day
+                function updateDateAndDay() {
+                    // Specify the time zone (e.g., 'America/New_York')
+                    const timeZone = 'Asia/Kolkata';
+                    
+                    // Get the current date and time in the specified time zone
+                    const currentDate = new Date().toLocaleString('en-US', { timeZone: timeZone });
+        
+                    // Extract the date and day
+                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                    const formattedDate = new Date(currentDate).toLocaleDateString('en-US', options);
+        
+                    // Update the content of the specified element with the formatted date and day
+                    const dateAndDayElement = document.getElementById('dateLink');
+                    dateAndDayElement.textContent = formattedDate;
+                }
+        
+                // Call the function when the page loads
+                updateDateAndDay();
+            </script>
+
             <div class="col-lg-3 text-right d-none d-md-block">
                 <nav class="navbar navbar-expand-sm bg-dark p-0">
                     <ul class="navbar-nav ml-auto mr-n2">
                         <li class="nav-item">
-                            <a class="nav-link text-body" href="#"><small class="fab fa-twitter"></small></a>
+                            <a class="nav-link text-body" href="https://twitter.com/UJ_Times"><small class="fab fa-twitter"></small></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-body" href="#"><small class="fab fa-facebook-f"></small></a>
+                            <a class="nav-link text-body" href="https://www.facebook.com/universaljusticetimes/"><small class="fab fa-facebook-f"></small></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-body" href="#"><small class="fab fa-linkedin-in"></small></a>
+                            <a class="nav-link text-body" href="https://www.linkedin.com/company/uj-times/"><small class="fab fa-linkedin-in"></small></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-body" href="#"><small class="fab fa-instagram"></small></a>
+                            <a class="nav-link text-body" href="https://www.instagram.com/uj_times/"><small class="fab fa-instagram"></small></a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link text-body" href="#"><small class="fab fa-google-plus-g"></small></a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
-                            <a class="nav-link text-body" href="#"><small class="fab fa-youtube"></small></a>
+                            <a class="nav-link text-body" href="https://www.youtube.com/channel/UCk0MO4p9np7iljUw9Xbw7Jg"><small class="fab fa-youtube"></small></a>
                         </li>
                     </ul>
                 </nav>
@@ -74,11 +99,12 @@
         <div class="row align-items-center bg-white py-3 px-lg-5">
             <div class="col-lg-4">
                 <a href="/" class="navbar-brand p-0 d-none d-lg-block">
-                    <h1 class="m-0 display-4 text-uppercase text-primary">Biz<span class="text-secondary font-weight-normal">News</span></h1>
+                    <img src="WhatsApp Image 2023-11-18 at 12.53.00_51e741aa" alt="">
+                    <h1 class="m-0 display-4 text-uppercase text-primary">UJ<span class="text-secondary font-weight-normal">Times</span></h1>
                 </a>
             </div>
             <div class="col-lg-8 text-center text-lg-right">
-                <a href="https://htmlcodex.com"><img class="img-fluid" src="../Public/img/ads-728x90.png" alt=""></a>
+                <a href="https://www.youtube.com/"><img class="img-fluid" src="img/" alt=""></a>
             </div>
         </div>
     </div>
@@ -89,33 +115,51 @@
     <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-2 py-lg-0 px-lg-5">
             <a href="/" class="navbar-brand d-block d-lg-none">
-                <h1 class="m-0 display-4 text-uppercase text-primary">Biz<span class="text-white font-weight-normal">News</span></h1>
+                <img src="WhatsApp Image 2023-11-18 at 12.53.00_51e741aa" alt="">
+                <h1 class="m-0 display-4 text-uppercase text-primary">UJ<span class="text-white font-weight-normal">Times</span></h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
-                    <a href="/" class="nav-item nav-link">Home</a>
-                    <a href="category.html" class="nav-item nav-link active">Category</a>
-                    <a href="single.html" class="nav-item nav-link">Single News</a>
+                    <a href="/" class="nav-item nav-link active">Home</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
+                        <a href="category.html" class="nav-link dropdown-toggle" data-toggle="dropdown">Category</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="#" class="dropdown-item">Menu item 1</a>
+                            <!-- <a href="category.html" class="dropdown-item">Legal News</a>
+                            <a href="#" class="dropdown-item">Army News</a>
+                            <a href="#" class="dropdown-item">Farmer’s News</a> -->
+                            <a href="dynamicCategory/technology" class="dropdown-item">Science & Technology News</a>
+                            <a href="dynamicCategory/currents" class="dropdown-item">Latest News</a>
+                            <!-- <a href="#" class="dropdown-item">Politics News</a> -->
+                            <a href="dynamicCategory/sports" class="dropdown-item">Sports News</a>
+                            <!-- <a href="#" class="dropdown-item">Travel & Lifestyle News</a> -->
+                            <!-- <a href="#" class="dropdown-item">Business News</a> -->
+                            <!-- <a href="#" class="dropdown-item">Health & Fitness News</a> -->
+                            <!-- <a href="#" class="dropdown-item">Entertainment News -->
+                            </a>
+                        </div>
+                    </div>
+                    <a href="collaboration.html" class="nav-item nav-link">Our Collaboration</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Upcoming Events</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="Award.html" class="dropdown-item">Award</a>
                             <a href="#" class="dropdown-item">Menu item 2</a>
                             <a href="#" class="dropdown-item">Menu item 3</a>
                         </div>
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
+                <!-- search bar -->
+                <!-- <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
                     <input type="text" class="form-control border-0" placeholder="Keyword">
                     <div class="input-group-append">
                         <button class="input-group-text bg-primary text-dark border-0 px-3"><i
                                 class="fa fa-search"></i></button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </nav>
     </div>
@@ -132,6 +176,156 @@
                             <div class="section-title">
                                 <h4 class="m-0 text-uppercase font-weight-bold" id="categoryType">Category: Business</h4>
                                 <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-3">
+                                <img class="img-fluid w-100 image" src="../Public/img/news-700x435-1.jpg" style="object-fit: cover;">
+                                <div class="bg-white border border-top-0 p-4">
+                                    <div class="mb-2">
+                                        <!-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                            href="">Business</a> -->
+                                        <a class="text-body" pubDate href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold title" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <!-- <p class="m-0 descrip">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                        rebum clita rebum dolor stet amet justo</p> -->
+                                </div>
+                                <!-- <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle mr-2" src="../Public/img/user.jpg" width="25" height="25" alt="">
+                                        <small>John Doe</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-3">
+                                <img class="img-fluid w-100 image" src="../Public/img/news-700x435-1.jpg" style="object-fit: cover;">
+                                <div class="bg-white border border-top-0 p-4">
+                                    <div class="mb-2">
+                                        <!-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                            href="">Business</a> -->
+                                        <a class="text-body" pubDate href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold title" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <!-- <p class="m-0 descrip">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                        rebum clita rebum dolor stet amet justo</p> -->
+                                </div>
+                                <!-- <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle mr-2" src="../Public/img/user.jpg" width="25" height="25" alt="">
+                                        <small>John Doe</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-3">
+                                <img class="img-fluid w-100 image" src="../Public/img/news-700x435-1.jpg" style="object-fit: cover;">
+                                <div class="bg-white border border-top-0 p-4">
+                                    <div class="mb-2">
+                                        <!-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                            href="">Business</a> -->
+                                        <a class="text-body" pubDate href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold title" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <!-- <p class="m-0 descrip">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                        rebum clita rebum dolor stet amet justo</p> -->
+                                </div>
+                                <!-- <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle mr-2" src="../Public/img/user.jpg" width="25" height="25" alt="">
+                                        <small>John Doe</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-3">
+                                <img class="img-fluid w-100 image" src="../Public/img/news-700x435-1.jpg" style="object-fit: cover;">
+                                <div class="bg-white border border-top-0 p-4">
+                                    <div class="mb-2">
+                                        <!-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                            href="">Business</a> -->
+                                        <a class="text-body" pubDate href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold title" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <!-- <p class="m-0 descrip">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                        rebum clita rebum dolor stet amet justo</p> -->
+                                </div>
+                                <!-- <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle mr-2" src="../Public/img/user.jpg" width="25" height="25" alt="">
+                                        <small>John Doe</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-3">
+                                <img class="img-fluid w-100 image" src="../Public/img/news-700x435-1.jpg" style="object-fit: cover;">
+                                <div class="bg-white border border-top-0 p-4">
+                                    <div class="mb-2">
+                                        <!-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                            href="">Business</a> -->
+                                        <a class="text-body" pubDate href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold title" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <!-- <p class="m-0 descrip">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                        rebum clita rebum dolor stet amet justo</p> -->
+                                </div>
+                                <!-- <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle mr-2" src="../Public/img/user.jpg" width="25" height="25" alt="">
+                                        <small>John Doe</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-3">
+                                <img class="img-fluid w-100 image" src="../Public/img/news-700x435-1.jpg" style="object-fit: cover;">
+                                <div class="bg-white border border-top-0 p-4">
+                                    <div class="mb-2">
+                                        <!-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                            href="">Business</a> -->
+                                        <a class="text-body" pubDate href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold title" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <!-- <p class="m-0 descrip">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                        rebum clita rebum dolor stet amet justo</p> -->
+                                </div>
+                                <!-- <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle mr-2" src="../Public/img/user.jpg" width="25" height="25" alt="">
+                                        <small>John Doe</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                    </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -233,28 +427,7 @@
                                 </div> -->
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid image" src="../Public/img/news-110x110-1.jpg" alt="">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <!-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a> -->
-                                        <a class="text-body pubDate" href=""><small>Jan 01, 2045</small></a>
-                                    </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold title" href="">Lorem ipsum dolor sit amet elit...</a>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid image" src="../Public/img/news-110x110-2.jpg" alt="">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <!-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a> -->
-                                        <a class="text-body pubDate" href=""><small>Jan 01, 2045</small></a>
-                                    </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold title" href="">Lorem ipsum dolor sit amet elit...</a>
-                                </div>
-                            </div>
-                        </div>
+                       
                        
                         <!-- <div class="col-lg-12 mb-3">
                             <a href=""><img class="img-fluid w-100" src="../Public/img/ads-728x90.png" alt=""></a>
@@ -288,50 +461,8 @@
                                 </div>
                             </div>
                         </div> -->
-                        <div class="col-lg-6">
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid image" src="../Public/img/news-110x110-1.jpg" alt="">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <!-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a> -->
-                                        <a class="text-body pubDate" href=""><small>Jan 01, 2045</small></a>
-                                    </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold title" href="">Lorem ipsum dolor sit amet elit...</a>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid image" src="../Public/img/news-110x110-2.jpg" alt="">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <!-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a> -->
-                                        <a class="text-body pubDate" href=""><small>Jan 01, 2045</small></a>
-                                    </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold title" href="">Lorem ipsum dolor sit amet elit...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid image" src="../Public/img/news-110x110-3.jpg" alt="">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <!-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a> -->
-                                        <a class="text-body pubDate" href=""><small>Jan 01, 2045</small></a>
-                                    </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold title" href="">Lorem ipsum dolor sit amet elit...</a>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid image" src="../Public/img/news-110x110-4.jpg" alt="">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <!-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a> -->
-                                        <a class="text-body pubDate" href=""><small>Jan 01, 2045</small></a>
-                                    </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold title" href="">Lorem ipsum dolor sit amet elit...</a>
-                                </div>
-                            </div>
-                        </div>
+                       
+                       
                     </div>
                 </div>
                 
@@ -384,57 +515,59 @@
                     <!-- Popular News Start -->
                     <div class="mb-3">
                         <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Tranding News</h4>
+                            <h4 class="m-0 text-uppercase font-weight-bold">trending News</h4>
                         </div>
                         <div class="bg-white border border-top-0 p-3">
                             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid" src="../Public/img/news-110x110-1.jpg" alt="">
+                                <img class="img-fluid"  style="height: 110px;width: 110px;" src="Public/img/1.jpeg" alt="">
                                 <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                     <div class="mb-2">
                                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                        <!-- <a class="text-body" href=""><small>Jan 01, 2045</small></a> -->
                                     </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">If Tata Tech lists at Rs 800-850, should one go ahead and buy it?</a>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid" src="../Public/img/news-110x110-2.jpg" alt="">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <!-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a> -->
-                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                                    </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid" src="../Public/img/news-110x110-3.jpg" alt="">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <!-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a> -->
-                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                                    </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid" src="../Public/img/news-110x110-4.jpg" alt="">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <!-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a> -->
-                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                                    </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid" src="../Public/img/news-110x110-5.jpg" alt="">
+                                <img class="img-fluid" style="height: 110px;width: 110px;"  src="Public/img/2.jpeg" alt="">
                                 <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                     <div class="mb-2">
                                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                        <!-- <a class="text-body" href=""><small>Jan 01, 2045</small></a> -->
                                     </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Jane Garrett, Nepal's plus-sized Miss Universe contestant
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" style="height: 110px;width: 110px;"  src="Public/img/3.jpeg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <!-- <a class="text-body" href=""><small>Jan 01, 2045</small></a> -->
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">OpenAI’s bots getting 'dangerously' close to human</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" style="height: 110px;width: 110px;"src="Public/img/4.jpeg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <!-- <a class="text-body" href=""><small>Jan 01, 2045</small></a> -->
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">NEET UG 2024: Students 10+2 without Biology are eligible</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid"style="height: 110px;width: 110px;" src="Public/img/5.jpeg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <!-- <a class="text-body" href=""><small>Jan 01, 2045</small></a> -->
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">‘Panauti’ politics & ‘disappointed Lady Justice’
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -491,17 +624,18 @@
     <div class="container-fluid bg-dark pt-5 px-sm-3 px-md-5 mt-5">
         <div class="row py-4">
             <div class="col-lg-3 col-md-6 mb-5">
+                <img style=" max-width: 100px;" src="Public/img/WhatsApp Image 2023-11-18 at 12.53.00_51e741aa.jpg" alt="">
                 <h5 class="mb-4 text-white text-uppercase font-weight-bold">Get In Touch</h5>
-                <p class="font-weight-medium"><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
-                <p class="font-weight-medium"><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                <p class="font-weight-medium"><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                <p class="font-weight-medium"><i class="fa fa-map-marker-alt mr-2"></i>Atal Incubation & Innovation Centre, Guru Gobind Singh Indraprastha University, opp. Gandhi ji Statue, Sector 16 C, Dwarka, Delhi, 110078</p>
+                <p class="font-weight-medium"><i class="fa fa-phone-alt mr-2"></i>+91 99995 55517</p>
+                <p class="font-weight-medium"><i class="fa fa-envelope mr-2"></i>Ujfdelhi@gmail.com</p>
                 <h6 class="mt-4 mb-3 text-white text-uppercase font-weight-bold">Follow Us</h6>
                 <div class="d-flex justify-content-start">
-                    <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-lg btn-secondary btn-lg-square" href="#"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="https://twitter.com/UJ_Times"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="https://www.facebook.com/universaljusticetimes/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="https://www.linkedin.com/company/uj-times/"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="https://www.instagram.com/uj_times/"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-lg btn-secondary btn-lg-square" href="https://www.youtube.com/channel/UCk0MO4p9np7iljUw9Xbw7Jg"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
@@ -509,81 +643,81 @@
                 <div class="mb-3">
                     <div class="mb-2">
                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                        <!-- <a class="text-body" href=""><small>Jan 01, 2045</small></a> -->
                     </div>
-                    <a class="small text-body text-uppercase font-weight-medium" href="">Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
+                    <a class="small text-body text-uppercase font-weight-medium" href="">Telangana Election 2023: All educational institutions</a>
                 </div>
                 <div class="mb-3">
                     <div class="mb-2">
                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                        <!-- <a class="text-body" href=""><small>Jan 01, 2045</small></a> -->
                     </div>
-                    <a class="small text-body text-uppercase font-weight-medium" href="">Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
+                    <a class="small text-body text-uppercase font-weight-medium" href="">MP: Chouhan Banks On 'Ladli Behna' Scheme.</a>
                 </div>
                 <div class="">
                     <div class="mb-2">
                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                        <!-- <a class="text-body" href=""><small>Jan 01, 2045</small></a> -->
                     </div>
-                    <a class="small text-body text-uppercase font-weight-medium" href="">Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
+                    <a class="small text-body text-uppercase font-weight-medium" href="">Dengue cases on the rise in Tamil Nadu, says former CM...</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h5 class="mb-4 text-white text-uppercase font-weight-bold">Categories</h5>
                 <div class="m-n1">
-                    <a href="" class="btn btn-sm btn-secondary m-1">Politics</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Business</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Corporate</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Business</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Health</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Education</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Science</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Business</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Foods</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Entertainment</a>
+                    <a href="" class="btn btn-sm btn-secondary m-1">Legal News</a>
+                    <a href="" class="btn btn-sm btn-secondary m-1">Army News</a>
+                    <a href="" class="btn btn-sm btn-secondary m-1">Farmer’s News
+                    </a>
+                    <a href="" class="btn btn-sm btn-secondary m-1">Science & Technology News
+                    </a>
+                    <a href="" class="btn btn-sm btn-secondary m-1">International News</a>
+                    <a href="" class="btn btn-sm btn-secondary m-1">Business News
+                    </a>
+                    <a href="" class="btn btn-sm btn-secondary m-1">Travel & Lifestyle News
+                    </a>
+                    <a href="" class="btn btn-sm btn-secondary m-1">Entertainment News
+                    </a>
+                    <a href="" class="btn btn-sm btn-secondary m-1">Sports News
+                    </a>
+                    <a href="" class="btn btn-sm btn-secondary m-1">Politics News
+                    </a>
                     <a href="" class="btn btn-sm btn-secondary m-1">Travel</a>
                     <a href="" class="btn btn-sm btn-secondary m-1">Lifestyle</a>
                     <a href="" class="btn btn-sm btn-secondary m-1">Politics</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Business</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Corporate</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Business</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Health</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Education</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Science</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Business</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Foods</a>
+                    <a href="" class="btn btn-sm btn-secondary m-1">Health & Fitness News</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h5 class="mb-4 text-white text-uppercase font-weight-bold">Flickr Photos</h5>
                 <div class="row">
                     <div class="col-4 mb-3">
-                        <a href=""><img class="w-100" src="../Public/img/news-110x110-1.jpg" alt=""></a>
+                        <a href=""><img class="w-100" src="Public/img/footer-1.png" alt=""></a>
                     </div>
                     <div class="col-4 mb-3">
-                        <a href=""><img class="w-100" src="../Public/img/news-110x110-2.jpg" alt=""></a>
+                        <a href=""><img class="w-100" src="Public/img/footer-2.png" alt=""></a>
                     </div>
                     <div class="col-4 mb-3">
-                        <a href=""><img class="w-100" src="../Public/img/news-110x110-3.jpg" alt=""></a>
+                        <a href=""><img class="w-100" src="Public/img/footer-3.png" alt=""></a>
                     </div>
                     <div class="col-4 mb-3">
-                        <a href=""><img class="w-100" src="../Public/img/news-110x110-4.jpg" alt=""></a>
+                        <a href=""><img class="w-100" src="Public/img/footer-4.png" alt=""></a>
                     </div>
                     <div class="col-4 mb-3">
-                        <a href=""><img class="w-100" src="../Public/img/news-110x110-5.jpg" alt=""></a>
+                        <a href=""><img class="w-100" src="Public/img/footer-5.png" alt=""></a>
                     </div>
                     <div class="col-4 mb-3">
-                        <a href=""><img class="w-100" src="../Public/img/news-110x110-1.jpg" alt=""></a>
+                        <a href=""><img class="w-100" src="Public/img/footer-6.png" alt=""></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="container-fluid py-4 px-sm-3 px-md-5" style="background: #111111;">
-        <p class="m-0 text-center">&copy; <a href="#">Your Site Name</a>. All Rights Reserved. 
+        <p class="m-0 text-center">&copy; <a href="#">Universal Justice Times</a>. All Rights Reserved 2023. 
 		
 		<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-		Design by <a href="https://htmlcodex.com">HTML Codex</a></p>
+		</a></p>
     </div>
     <!-- Footer End -->
 
