@@ -63,6 +63,9 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/index.html"));
 });
+app.get("/dynamicCategory/:x", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/dynamicCatagories.html"));
+});
 app.get("/contact", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/contact.html"));
 });
@@ -72,9 +75,9 @@ app.get("/collaboration", (req, res) => {
 app.get("/Award", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/Award.html"));
 });
-app.get("/index", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/index.html"));
-});
+// app.get("/index", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./client/index.html"));
+// });
 
 app.get("/newsPage/:id", (req, res) => {
   // console.log(req.params.id);
