@@ -43,7 +43,9 @@ const NewsSchema = new Schema({
 const sports = mongoose.model("sports", NewsSchema);
 const currents = mongoose.model("currents", NewsSchema);
 const technologies = mongoose.model("technologies", NewsSchema);
-
+const breakings = mongoose.model("breakings", NewsSchema);
+const politics = mongoose.model("politics", NewsSchema);
+const legals = mongoose.model("legals", NewsSchema);
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
@@ -93,8 +95,92 @@ app.get("/latest", async (req, res) => {
   try {
     // Use the Mongoose model to search for the document
     const id=req.query.id;
-    console.log(id);
+    // console.log(id);
     const doc = await mongoose.model('currents').findById(id).exec();
+    if (doc) {
+      console.log('Found document:', doc);
+      res.json(doc);
+    } else {
+      console.log('Document not found');
+    }
+  } catch (err) {
+    console.error('Error searching for document:', err);
+  }
+  //  finally {
+  //   mongoose.connection.close();
+  // }
+
+});
+
+app.get("/legals", async (req, res) => {
+  const data = await legals.find();
+  // console.log(data);
+
+  res.json(data);
+});
+app.get("/legal", async (req, res) => {
+  try {
+    // Use the Mongoose model to search for the document
+    const id=req.query.id;
+    console.log(id);
+    const doc = await mongoose.model('legals').findById(id).exec();
+    if (doc) {
+      console.log('Found document:', doc);
+      res.json(doc);
+    } else {
+      console.log('Document not found');
+    }
+  } catch (err) {
+    console.error('Error searching for document:', err);
+  }
+  //  finally {
+  //   mongoose.connection.close();
+  // }
+
+});
+
+
+app.get("/politics", async (req, res) => {
+  const data = await politics.find();
+  // console.log(data);
+
+  res.json(data);
+});
+app.get("/politic", async (req, res) => {
+  try {
+    // Use the Mongoose model to search for the document
+    const id=req.query.id;
+    console.log(id);
+    const doc = await mongoose.model('politics').findById(id).exec();
+    if (doc) {
+      console.log('Found document:', doc);
+      res.json(doc);
+    } else {
+      console.log('Document not found');
+    }
+  } catch (err) {
+    console.error('Error searching for document:', err);
+  }
+  //  finally {
+  //   mongoose.connection.close();
+  // }
+
+});
+
+
+
+app.get("/breakings", async (req, res) => {
+  const data = await breakings.find();
+  // console.log(data);
+
+  res.json(data);
+});
+app.get("/breaking", async (req, res) => {
+  try {
+    // Use the Mongoose model to search for the document
+    const id=req.query.id;
+    console.log(id);
+    const doc = await mongoose.model('breakings').findById(id).exec();
     if (doc) {
       console.log('Found document:', doc);
       res.json(doc);
